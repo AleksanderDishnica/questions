@@ -1,3 +1,5 @@
 $(function() {
-  // Handler for .ready() called.
+	$('#start').click(function(e){
+		
+	});
 });
