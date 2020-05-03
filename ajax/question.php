@@ -1,6 +1,6 @@
 <?php
-    if(isset($_POST['name'])){
-        $cookie_name = "cookie_name";
-        $cookie_value = $_POST['name'];
-        setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+    if(isset($_POST['question'])){
+        $cookie_name = "cookie_question";
+        $cookie_value = $_POST['question'];
+        setcookie($cookie_name, $cookie_value, time() + (86400 * 30));
     }

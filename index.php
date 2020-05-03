@@ -53,11 +53,16 @@
         </button>
       </div>
       <div class="modal-body">
-    	Name: <input type="text" name="name">
+    	<input type="checkbox" id="answer1" name="answer" value="Bike">
+		<label for="answer"> Answer number 1</label><br>
+		<input type="checkbox" id="answer2" name="answer" value="Car">
+		<label for="answer"> Answer number 2</label><br>
+		<input type="checkbox" id="answer3" name="answer" value="Boat">
+		<label for="answer"> Answer number 3</label><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" id="save">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="save1">Save changes</button>
       </div>
     </div>
   </div>

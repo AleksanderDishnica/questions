@@ -12,4 +12,18 @@ $(function() {
 			}
 		});
 	});
+
+	$('#save1').click(function(e){
+		let selection = $("input[name='answer']:checked").val();
+		console.log(selection);
+
+		$.ajax({
+			method:'POST',
+			url:'ajax/answer.php',
+			data:{selected:selection},
+			success:function(data){
+
+			}
+		});
+	});
 });
