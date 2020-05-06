@@ -18,6 +18,9 @@ $(function() {
 				url:'ajax/question.php',
 				data:{question:name},
 				success:function(data){
+					// Empty all alerts
+					$('.alerts').empty();
+
 					// Create the new modal
 					$('#example1Modal').modal({
 						'backdrop':'static',
