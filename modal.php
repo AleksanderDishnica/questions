@@ -9,10 +9,17 @@
         </button>
       </div>
       <div class="modal-body">
-    	Name: <input type="text" name="name">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="close">Close</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" id="save">Save changes</button>
       </div>
     </div>
@@ -38,7 +45,7 @@
 		<label for="answer"> Answer number 3</label><br>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="close">Close</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="close">Close</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" id="save1">Save changes</button>
       </div>
     </div>
