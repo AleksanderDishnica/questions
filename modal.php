@@ -17,6 +17,7 @@
           <label for="email">Email address</label>
           <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
         </div>
+        <div class="alerts"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal" id="close">Close</button>
