@@ -9,8 +9,8 @@ $(function() {
 	});
 
 	$('#save').click(function(e){
-		let name = $('#name').val();
-		let email = $('#email').val();
+		let name = $('#name').val().trim();
+		let email = $('#email').val().trim();
 
 		if(name){
 			$.ajax({
@@ -32,12 +32,21 @@ $(function() {
 			e.stopPropagation();
 
 			if(alertName == 0 && (name == null || name == '')){
-				$('.alerts').append('<p class="text-danger">Name cannot be empty!</p>');
+				$('.alerts').append('<p class="text-danger" id="alertName">Name cannot be empty!</p>');
 				alertName++;
 			}
+			else if(alertName == 1 && (name != null || name != '') && name.length !== 0){
+				console.log(' Alert name' + alertName);
+				$('#alertName').remove();
+			}
+
 			if(alertEmail == 0 && (email == null || email == '')){
-				$('.alerts').append('<p class="text-danger">Email cannot be empty!</p>');
+				$('.alerts').append('<p class="text-danger" id="alertEmail">Email cannot be empty!</p>');
 				alertEmail++;
+			}
+			else if(alertEmail == 1 && (email != null || email != '') && email.length !== 0){
+				console.log(' Alert email' + alertEmail);
+				$('#alertEmail').remove();
 			}
 		}
 	});
