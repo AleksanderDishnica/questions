@@ -1,5 +1,5 @@
 <!-- Modal for user registration -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,11 +11,11 @@
       <div class="modal-body">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
+          <input type="text" name="name" class="form-control" id="name" aria-describedby="name" placeholder="Enter name">
         </div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+          <input type="email" name="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter email">
         </div>
         <div class="alerts"></div>
       </div>
@@ -28,7 +28,7 @@
 </div> 
 
 <!-- Modal for first question -->
-<div class="modal fade" id="example1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

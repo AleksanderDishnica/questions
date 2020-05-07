@@ -3,7 +3,7 @@ $(function() {
 	let alertEmail = 0;
 
 	$('#start').click(function(e){
-		$('#exampleModal').modal({
+		$('#registerModal').modal({
 			'backdrop':'static',
 		});
 	});
@@ -12,7 +12,7 @@ $(function() {
 		let name = $('#name').val().trim();
 		let email = $('#email').val().trim();
 
-		if(name){
+		if(name && email){
 			$.ajax({
 				method:'POST',
 				url:'ajax/question.php',
@@ -22,7 +22,7 @@ $(function() {
 					$('.alerts').empty();
 
 					// Create the new modal
-					$('#example1Modal').modal({
+					$('#questionModal').modal({
 						'backdrop':'static',
 					});
 				}
@@ -31,24 +31,35 @@ $(function() {
 			e.preventDefault();
 			e.stopPropagation();
 
-			if(alertName == 0 && (name == null || name == '')){
+			if(alertName == 0 && (name == null || name == '') && name.length === 0){
 				$('.alerts').append('<p class="text-danger" id="alertName">Name cannot be empty!</p>');
 				alertName++;
 			}
 			else if(alertName == 1 && (name != null || name != '') && name.length !== 0){
-				console.log(' Alert name' + alertName);
-				$('#alertName').remove();
+				console.log('alertName: ' + alertName + '<br>');
+				$('#alertName').empty();
+				alertName--;
+			}else{
+				console.log(123);
 			}
 
-			if(alertEmail == 0 && (email == null || email == '')){
+			if(alertEmail == 0 && (email == null || email == '') && email.length === 0){
 				$('.alerts').append('<p class="text-danger" id="alertEmail">Email cannot be empty!</p>');
 				alertEmail++;
 			}
 			else if(alertEmail == 1 && (email != null || email != '') && email.length !== 0){
-				console.log(' Alert email' + alertEmail);
-				$('#alertEmail').remove();
+				console.log('alertEmail: ' + alertEmail + '<br>');
+				$('#alertEmail').empty();
+				alertEmail--;
+			}else{
+				console.log(123);
 			}
 		}
+
+		$('#registerModal .close, #registerModal #close').click(function(){
+			$('#alertName').empty();
+			$('#alertEmail').empty();
+		});
 	});
 
 	$('#save1').click(function(e){
