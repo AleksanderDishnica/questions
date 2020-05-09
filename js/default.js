@@ -22,7 +22,7 @@ $(function() {
 					$('.alerts').empty();
 
 					// Create the new modal
-					$('#questionModal').modal({
+					$('#question1Modal').modal({
 						'backdrop':'static',
 					});
 				}
@@ -36,11 +36,9 @@ $(function() {
 				alertName++;
 			}
 			else if(alertName == 1 && (name != null || name != '') && name.length !== 0){
-				console.log('alertName: ' + alertName + '<br>');
-				$('#alertName').empty();
+				$('#alertName').remove();
 				alertName--;
 			}else{
-				console.log(123);
 			}
 
 			if(alertEmail == 0 && (email == null || email == '') && email.length === 0){
@@ -48,30 +46,33 @@ $(function() {
 				alertEmail++;
 			}
 			else if(alertEmail == 1 && (email != null || email != '') && email.length !== 0){
-				console.log('alertEmail: ' + alertEmail + '<br>');
-				$('#alertEmail').empty();
+				$('#alertEmail').remove();
 				alertEmail--;
 			}else{
-				console.log(123);
 			}
 		}
+	});
 
-		$('#registerModal .close, #registerModal #close').click(function(){
-			$('#alertName').empty();
-			$('#alertEmail').empty();
-		});
+	$('#registerModal .close, #registerModal #close').click(function(){
+		alertEmail = 0;
+		alertName = 0;
+		
+		$('#alertName').remove();
+		$('#alertEmail').remove();
 	});
 
 	$('#save1').click(function(e){
 		let selection = $("input[name='answer']:checked").val();
-		console.log(selection);
 
 		$.ajax({
 			method:'POST',
 			url:'ajax/answer.php',
 			data:{selected:selection},
 			success:function(data){
-
+				// Create the new modal
+				$('#question2Modal').modal({
+					'backdrop':'static',
+				});
 			}
 		});
 	});
