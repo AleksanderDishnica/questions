@@ -15,8 +15,11 @@ $(function() {
 		if(name && email){
 			$.ajax({
 				method:'POST',
-				url:'ajax/question.php',
-				data:{question:name},
+				url:'ajax/register.php',
+				data:{
+					name:name,
+					email:email,
+				},
 				success:function(data){
 					// Empty all alerts
 					$('.alerts').empty();
@@ -85,7 +88,7 @@ $(function() {
 			url:'ajax/dbsave.php',
 			data:{selected:selection},
 			success:function(data){
-				
+
 			}
 		});
 	});
