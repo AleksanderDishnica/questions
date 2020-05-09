@@ -76,4 +76,17 @@ $(function() {
 			}
 		});
 	});
+
+	$('#save2').click(function(e){
+		let selection = $("input[name='answer']:checked").val();
+
+		$.ajax({
+			method:'POST',
+			url:'ajax/dbsave.php',
+			data:{selected:selection},
+			success:function(data){
+				
+			}
+		});
+	});
 });

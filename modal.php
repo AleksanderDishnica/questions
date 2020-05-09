@@ -38,12 +38,12 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="checkbox" id="answer1" name="answer" value="Bike">
-        <label for="answer"> Answer number 1</label><br>
-        <input type="checkbox" id="answer2" name="answer" value="Car">
-        <label for="answer"> Answer number 2</label><br>
-        <input type="checkbox" id="answer3" name="answer" value="Boat">
-        <label for="answer"> Answer number 3</label><br>
+        <input type="checkbox" id="q1a1" name="q1a1" value="Bike">
+        <label for="q1a1"> Answer number 1</label><br>
+        <input type="checkbox" id="q1a2" name="q1a2" value="Car">
+        <label for="q1a2"> Answer number 2</label><br>
+        <input type="checkbox" id="q1a3" name="q1a3" value="Boat">
+        <label for="q1a3"> Answer number 3</label><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal" id="close">Close</button>
@@ -51,7 +51,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 <!-- Modal for second question -->
 <div class="modal fade" id="question2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,16 +64,16 @@
         </button>
       </div>
       <div class="modal-body">
-        <input type="checkbox" id="answer1" name="answer" value="Bike">
-        <label for="answer"> Answer number 1</label><br>
-        <input type="checkbox" id="answer2" name="answer" value="Car">
-        <label for="answer"> Answer number 2</label><br>
-        <input type="checkbox" id="answer3" name="answer" value="Boat">
-        <label for="answer"> Answer number 3</label><br>
+        <input type="checkbox" id="q2a1" name="q2a1" value="Bike">
+        <label for="q2a1"> Answer number 1</label><br>
+        <input type="checkbox" id="q2a2" name="q2a2" value="Car">
+        <label for="q2a2"> Answer number 2</label><br>
+        <input type="checkbox" id="q2a3" name="q2a3" value="Boat">
+        <label for="q2a3"> Answer number 3</label><br>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal" id="close">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" id="save1">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="save2">Save changes</button>
       </div>
     </div>
   </div>
