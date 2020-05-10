@@ -65,30 +65,38 @@ $(function() {
 	});
 
 	$('#save1').click(function(e){
-		let selection = $("input[name='answer']:checked").val();
+		let selection = $("#question1Modal input:checked").map(function() {
+							return this.value;
+						}).get().join(",");
 
 		$.ajax({
 			method:'POST',
 			url:'ajax/answer.php',
-			data:{selected:selection},
+			data:{
+				selected:selection,
+			},
 			success:function(data){
 				// Create the new modal
 				$('#question2Modal').modal({
 					'backdrop':'static',
 				});
+
 			}
 		});
 	});
 
 	$('#save2').click(function(e){
-		let selection = $("input[name='answer']:checked").val();
+		let selection = $("#question2Modal input:checked").map(function() {
+							return this.value;
+						}).get().join(",");
 
 		$.ajax({
 			method:'POST',
 			url:'ajax/dbsave.php',
-			data:{selected:selection},
+			data:{
+				selected:selection,
+			},
 			success:function(data){
-
 			}
 		});
 	});
