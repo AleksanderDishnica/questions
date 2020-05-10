@@ -2,6 +2,23 @@ $(function() {
 	let alertName = 0;
 	let alertEmail = 0;
 
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+
 	$('#start').click(function(e){
 		$('#registerModal').modal({
 			'backdrop':'static',
@@ -89,15 +106,6 @@ $(function() {
 							return this.value;
 						}).get().join(",");
 
-		let allCookies = [
-			getCookie('cookie_name'),
-			getCookie('cookie_email'),
-			getCookie('cookie_selected1'),
-			getCookie('cookie_selected2'),
-		];
-
-
-
 		$.ajax({
 			method:'POST',
 			url:'ajax/answer.php',
@@ -105,34 +113,26 @@ $(function() {
 				selected2:selection,
 			},
 			success:function(data){
+				let allCookies = [
+					getCookie('cookie_name'),
+					getCookie('cookie_email'),
+					getCookie('cookie_selected1'),
+					getCookie('cookie_selected2'),
+				];
+				
 				$.ajax({
 					method:'POST',
 					data:{
 						allCookies:allCookies,
 					},
-					url:'ajax/dbweb.php',
+					url:'ajax/dbsave.php',
 					success:function(){
+
+						console.log(getCookie('cookie_name'));
 						console.log(allCookies);
 					}
 				});
 			}
 		});
 	});
-
-	function getCookie(cname) {
-		var name = cname + "=";
-		var decodedCookie = decodeURIComponent(document.cookie);
-		var ca = decodedCookie.split(';');
-		
-		for(var i = 0; i <ca.length; i++) {
-			var c = ca[i];
-			while (c.charAt(0) == ' ') {
-				c = c.substring(1);
-			}
-			if (c.indexOf(name) == 0) {
-				return c.substring(name.length, c.length);
-			}
-		}
-		return "";
-	}
 });
