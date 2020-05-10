@@ -103,8 +103,8 @@ $(function() {
 
 	$('#save2').click(function(e){
 		let selection = $("#question2Modal input:checked").map(function() {
-							return this.value;
-						}).get().join(",");
+				return this.value;
+			}).get().join(",");
 
 		$.ajax({
 			method:'POST',
@@ -119,17 +119,16 @@ $(function() {
 					getCookie('cookie_selected1'),
 					getCookie('cookie_selected2'),
 				];
-				
+
 				$.ajax({
 					method:'POST',
 					data:{
 						allCookies:allCookies,
 					},
 					url:'ajax/dbsave.php',
-					success:function(){
-
-						console.log(getCookie('cookie_name'));
-						console.log(allCookies);
+					success:function(data){
+						console.log(data);
+						$('#finished').append('<p>Finished test!</p>');
 					}
 				});
 			}
