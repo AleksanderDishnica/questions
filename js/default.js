@@ -73,14 +73,13 @@ $(function() {
 			method:'POST',
 			url:'ajax/answer.php',
 			data:{
-				selected:selection,
+				selected1:selection,
 			},
 			success:function(data){
 				// Create the new modal
 				$('#question2Modal').modal({
 					'backdrop':'static',
 				});
-
 			}
 		});
 	});
@@ -90,14 +89,50 @@ $(function() {
 							return this.value;
 						}).get().join(",");
 
+		let allCookies = [
+			getCookie('cookie_name'),
+			getCookie('cookie_email'),
+			getCookie('cookie_selected1'),
+			getCookie('cookie_selected2'),
+		];
+
+
+
 		$.ajax({
 			method:'POST',
-			url:'ajax/dbsave.php',
+			url:'ajax/answer.php',
 			data:{
-				selected:selection,
+				selected2:selection,
 			},
 			success:function(data){
+				$.ajax({
+					method:'POST',
+					data:{
+						allCookies:allCookies,
+					},
+					url:'ajax/dbweb.php',
+					success:function(){
+						console.log(allCookies);
+					}
+				});
 			}
 		});
 	});
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
 });
